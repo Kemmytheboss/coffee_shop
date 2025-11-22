@@ -1,25 +1,18 @@
-#debug.py 
 from customer import Customer
-from coffee import MENU
+from coffee import Coffee
+from order import Order
 
-# Create some test data
-alice = customer("Alice")
-bob = customer("Bob")
-latte = coffee("Latte")
-espresso = coffee("Espresso")
+c1 = Customer("Alice")
+c2 = Customer("Bob")
 
-# Create some test orders
-alice.test_create_order(latte, 250)
-alice.test_create_order(espresso, 200)
-bob.test_create_order(espresso, 200)
-bob.test_create_order(latte, 250)
+latte = Coffee("Latte")
+mocha = Coffee("Mocha")
 
-# print hekppful debug information
-print("All orders:", __import__('order').Order.all())
-print("Latte orders:", latte.orders())
-print("Latte customers:", latte.customers())
-print("Latte num_orders:", latte.number_of_orders())
-print("Latte average_price:", latte.average_price())
-print("Alice total_spent:", alice.total_spent())
-print("Most aficionado for Latte:", Customer.most_aficionado(latte))
-print("Most popular coffee:", coffee.most_popular())
+c1.create_order(latte, 5)
+c1.create_order(mocha, 7)
+c2.create_order(latte, 6)
+
+print("Alice's Coffees:", [c.name for c in c1.coffees()])
+print("Latte Orders:", latte.num_orders())
+print("Latte Avg Price:", latte.average_price())
+print("Most Aficionado for Latte:", Customer.most_aficionado(latte).name)
