@@ -1,47 +1,51 @@
-START
-print "Welcome to Coffee Shop"
-load MENU
+Start Program
 
+Load menu
 
-order_list = []
+Display welcome message
 
+2. Show Menu to User
 
-WHILE user wants to order:
-display MENU
-item = user selects menu item
-quantity = ask user quantity
+User sees available items, e.g.:
 
+Espresso
 
-add {item, quantity} to order_list
+Cappuccino
 
+Latte
 
-ask user "Do you want another item? (yes/no)"
-END WHILE
+3. User Selects Items
 
+User chooses a drink
 
-total = 0
-FOR each order in order_list:
-subtotal = order.item.price * order.quantity
-total = total + subtotal
-END FOR
+User enters quantity
 
+Option to add more items
 
-print "Your total is: $", total
+4. System Calculates Total
 
+Total = sum(item.price * quantity)
 
-payment = ask user for money
+5. Process Payment
 
+Accept payment amount
 
-IF payment < total:
-print "Insufficient funds"
-RESTART payment
-ELSE
-change = payment - total
-print "Payment accepted"
-print "Your change: $", change
-END IF
+If amount < total → show error
 
+If amount >= total → complete order
 
-print receipt with all items, total, payment, change
-print "Thank you for your purchase!"
-END
+Return change (if any)
+
+6. Print Receipt
+
+Show item list
+
+Show total
+
+Show payment
+
+Show change
+
+Thank customer
+
+7. End
