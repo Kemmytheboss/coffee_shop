@@ -1,3 +1,37 @@
+Coffee Shop Ordering System
+
+This project is a simple ordering system designed to manage customer orders, menu items, payments, and order processing.
+
+Features
+
+Display available coffee menu items
+
+Take customer orders
+
+Calculate total cost
+
+Process payment
+
+Generate receipt
+
+Technologies (Optional depending on your implementation)
+
+Programming Language: Python / JavaScript / Node.js / etc.
+
+Data Format: JSON / Local Storage
+
+Project Structure (Sample)
+coffee-shop/
+│── src/
+│   ├── menu.py
+│   ├── order.py
+│   ├── payment.py
+│   └── main.py
+│
+│── README.md
+How to Run (Python example)
+
+
 Start Program
 
 Load menu
