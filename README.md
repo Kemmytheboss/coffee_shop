@@ -29,8 +29,6 @@ coffee-shop/
 │   └── main.py
 │
 │── README.md
-How to Run (Python example)
-
 
 Start Program
 
