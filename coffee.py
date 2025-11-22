@@ -24,3 +24,24 @@ class Coffee:
         self._name = value
 
     # relationship helpers
+    def orders(self) -> List['Order']:
+        from order import Order  # Import here to avoid circular dependency
+        return [order for order in Order.all if order.coffee_name == self.name] 
+
+    def customers(self) -> List['Customer']:
+        seen = []
+        for order in self.orders():
+            if order.customer not in seen:
+                seen.append(order.customer)
+        return seen
+
+        # aggregate methods
+    def number_of_orders(self) -> int:
+        return len(self.orders())   
+
+    def average_price(self) -> Optional[float]:
+        orders = self.orders()
+        if not orders:
+            return None
+        total = sum(order.price for order in orders)
+        return total / len(orders)
